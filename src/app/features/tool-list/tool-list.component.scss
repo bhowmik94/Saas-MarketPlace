@@ -1,0 +1,39 @@
+.tool-filters {
+  gap: 1rem;
+
+  @media (min-width: 768px) {
+    .category-field {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.tool-cards {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  grid-template-columns: 1fr; // default mobile
+
+  .tool-card {
+    padding: 0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .card-img-wrapper {
+    width: 100%;
+    height: 160px; /* Can be changed */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

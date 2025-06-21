@@ -9,7 +9,7 @@
         { "plan": "Free", "price": 0 },
         { "plan": "Pro", "price": 10 }
       ],
-      "image": "/assets/logos/notion.png",
+      "image": "assets/logos/notion.png",
       "tags": ["notes", "wiki", "collaboration"]
     },
     {
@@ -21,7 +21,7 @@
         { "plan": "Free", "price": 0 },
         { "plan": "Professional", "price": 12 }
       ],
-      "image": "/assets/logos/figma.png",
+      "image": "assets/logos/figma.png",
       "tags": ["design", "ui", "ux"]
     },
     {
@@ -33,7 +33,7 @@
         { "plan": "Free", "price": 0 },
         { "plan": "Standard", "price": 6.67 }
       ],
-      "image": "/assets/logos/slack.png",
+      "image": "assets/logos/slack.png",
       "tags": ["chat", "team", "communication"]
     },
     {
@@ -45,7 +45,7 @@
         { "plan": "Free", "price": 0 },
         { "plan": "Business Class", "price": 10 }
       ],
-      "image": "/assets/logos/trello.png",
+      "image": "assets/logos/trello.png",
       "tags": ["kanban", "tasks", "organization"]
     }
   ]
