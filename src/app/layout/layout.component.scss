@@ -1,0 +1,22 @@
+.sidenav-container {
+  height: 100vh;
+  display: flex;
+}
+
+mat-sidenav-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.main-content {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
