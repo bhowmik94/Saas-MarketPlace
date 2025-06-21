@@ -1,0 +1,22 @@
+<mat-card class="auth-card">
+  <h2>{{ isLogin ? 'Login' : 'Sign Up' }}</h2>
+  <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">
+      {{ isLogin ? 'Login' : 'Sign Up' }}
+    </button>
+
+    <button mat-button type="button" (click)="toggleMode()">
+      {{ isLogin ? 'Create an account' : 'Already have an account?' }}
+    </button>
+  </form>
+</mat-card>

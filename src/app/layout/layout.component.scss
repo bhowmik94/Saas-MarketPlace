@@ -9,10 +9,19 @@ mat-sidenav-content {
   width: 100%;
 }
 
-mat-toolbar {
-  position: sticky;
-  top: 0;
-  z-index: 1;
+.toolbar {
+  position: relative;
+  justify-content: start;
+  padding: 0 16px;
+}
+
+.toolbar-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: 18px;
+  white-space: nowrap;
 }
 
 .main-content {
