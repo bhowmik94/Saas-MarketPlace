@@ -1,0 +1,52 @@
+{
+  "tools": [
+    {
+      "id": 1,
+      "name": "Notion",
+      "category": "Productivity",
+      "description": "All-in-one workspace for notes and docs.",
+      "pricing": [
+        { "plan": "Free", "price": 0 },
+        { "plan": "Pro", "price": 10 }
+      ],
+      "image": "/assets/logos/notion.png",
+      "tags": ["notes", "wiki", "collaboration"]
+    },
+    {
+      "id": 2,
+      "name": "Figma",
+      "category": "Design",
+      "description": "Collaborative interface design tool.",
+      "pricing": [
+        { "plan": "Free", "price": 0 },
+        { "plan": "Professional", "price": 12 }
+      ],
+      "image": "/assets/logos/figma.png",
+      "tags": ["design", "ui", "ux"]
+    },
+    {
+      "id": 3,
+      "name": "Slack",
+      "category": "Communication",
+      "description": "Team communication and collaboration platform.",
+      "pricing": [
+        { "plan": "Free", "price": 0 },
+        { "plan": "Standard", "price": 6.67 }
+      ],
+      "image": "/assets/logos/slack.png",
+      "tags": ["chat", "team", "communication"]
+    },
+    {
+      "id": 4,
+      "name": "Trello",
+      "category": "Project Management",
+      "description": "Visual tool to manage tasks and projects.",
+      "pricing": [
+        { "plan": "Free", "price": 0 },
+        { "plan": "Business Class", "price": 10 }
+      ],
+      "image": "/assets/logos/trello.png",
+      "tags": ["kanban", "tasks", "organization"]
+    }
+  ]
+}
