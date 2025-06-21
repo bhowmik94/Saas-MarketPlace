@@ -6,11 +6,10 @@ import { RouterModule } from '@angular/router';
 import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [MatButtonModule, MatCardModule, MatToolbarModule, RouterModule, NgFor],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+    selector: 'app-home',
+    imports: [MatButtonModule, MatCardModule, MatToolbarModule, RouterModule, NgFor],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   features = [

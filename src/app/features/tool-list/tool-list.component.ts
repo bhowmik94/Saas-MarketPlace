@@ -12,20 +12,19 @@ import { FormsModule } from '@angular/forms';
 import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-tool-list',
-  standalone: true,
-  imports: [
-    MatCardModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatPaginatorModule,
-    MatButtonModule,
-    FormsModule,
-    NgFor
-  ],
-  templateUrl: './tool-list.component.html',
-  styleUrl: './tool-list.component.scss',
+    selector: 'app-tool-list',
+    imports: [
+        MatCardModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatPaginatorModule,
+        MatButtonModule,
+        FormsModule,
+        NgFor
+    ],
+    templateUrl: './tool-list.component.html',
+    styleUrl: './tool-list.component.scss'
 })
 export class ToolListComponent implements OnInit {
   tools: Tool[] = [];

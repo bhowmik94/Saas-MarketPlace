@@ -8,10 +8,9 @@ import { MatIcon } from '@angular/material/icon';
 import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-side-bar',
-  standalone: true,
-  imports: [ MatListModule],
-  templateUrl: './side-bar.component.html',
-  styleUrl: './side-bar.component.scss'
+    selector: 'app-side-bar',
+    imports: [MatListModule],
+    templateUrl: './side-bar.component.html',
+    styleUrl: './side-bar.component.scss'
 })
 export class SidebarComponent {}

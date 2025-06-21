@@ -13,23 +13,22 @@ import { MatIcon } from '@angular/material/icon';
 import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-layout',
-  standalone: true,
-  templateUrl: './layout.component.html',
-  imports: [
-    FooterComponent,
-    SidebarComponent,
-    RouterOutlet,
-    CommonModule,
-    MatSidenavContainer,
-    MatSidenav,
-    MatToolbar,
-    MatListModule,
-    MatSidenavContent,
-    MatIcon,
-    NgIf,
-  ],
-    styleUrls: ["./layout.component.scss"],
+    selector: 'app-layout',
+    templateUrl: './layout.component.html',
+    imports: [
+        FooterComponent,
+        SidebarComponent,
+        RouterOutlet,
+        CommonModule,
+        MatSidenavContainer,
+        MatSidenav,
+        MatToolbar,
+        MatListModule,
+        MatSidenavContent,
+        MatIcon,
+        NgIf,
+    ],
+    styleUrls: ["./layout.component.scss"]
 })
 export class LayoutComponent {
   isMobile = false;
