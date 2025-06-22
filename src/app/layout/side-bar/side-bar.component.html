@@ -1,5 +1,10 @@
 <mat-nav-list>
-  <a color="primary" mat-list-item routerLink="/login">Login</a>
-  <a mat-list-item routerLink="/signup">Signup</a>
+  @if (!isAuthenticated()) {
+    <a mat-list-item routerLink="/login">Login</a>
+    <a mat-list-item routerLink="/signup">Signup</a>
+  } @else {
+    <a mat-list-item routerLink="/profile">Profile</a>  
+    <a mat-list-item (click)="logoutUser()">Logout</a>  
+  }
   <!-- Other links -->
 </mat-nav-list>

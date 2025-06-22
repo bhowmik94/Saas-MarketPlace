@@ -14,6 +14,7 @@ import { NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-layout',
+    standalone: true,
     templateUrl: './layout.component.html',
     imports: [
         FooterComponent,
