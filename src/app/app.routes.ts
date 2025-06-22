@@ -15,12 +15,24 @@ export const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: '', component: HomeComponent },
-      { path: 'login', canActivate: [NoAuthGuard], component: SignInComponent },
-      { path: 'signup', canActivate: [NoAuthGuard], component: SignUpComponent },
       { path: 'tools', component: ToolListComponent },
-      { path: 'dashboard', canActivate: [AuthGuard], component: DashboardComponent },
+      {
+        path: 'dashboard',
+        canActivate: [AuthGuard],
+        component: DashboardComponent,
+      },
       { path: 'profile', canActivate: [AuthGuard], component: Profile },
       // more children
-    ]
+    ],
+  },
+  {
+    path: 'login',
+    canActivate: [NoAuthGuard],
+    component: SignInComponent,
+  },
+  {
+    path: 'signup',
+    canActivate: [NoAuthGuard],
+    component: SignUpComponent,
   },
 ];
