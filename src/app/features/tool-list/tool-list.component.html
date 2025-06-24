@@ -24,7 +24,7 @@
 </div>
 
 <div class="tool-cards">
-  <mat-card *ngFor="let tool of pagedTools" class="tool-card">
+  <mat-card *ngFor="let tool of filteredTools" class="tool-card">
     <div class="card-img-wrapper">
       <img mat-card-image [src]="tool.image" [alt]="tool.name" />
     </div>
@@ -39,10 +39,3 @@
   </mat-card>
 </div>
 
-<mat-paginator
-  [pageSize]="pageSize"
-  [pageSizeOptions]="[4, 8, 12]"
-  [length]="filteredTools.length"
-  (page)="onPageChange($event)"
->
-</mat-paginator>

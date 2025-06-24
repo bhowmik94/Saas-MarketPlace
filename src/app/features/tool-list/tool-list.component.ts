@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, inject, OnInit, ViewChild } from '@angular/core';
 import { ToolRepository } from '../../repositories/tool.repository';
 import { Tool } from '../../models/tool.model';
 import { MatCardModule } from '@angular/material/card';
@@ -27,51 +27,33 @@ import { NgFor } from '@angular/common';
     styleUrl: './tool-list.component.scss'
 })
 export class ToolListComponent implements OnInit {
+  private repo = inject(ToolRepository);
+
   tools: Tool[] = [];
   filteredTools: Tool[] = [];
-  pagedTools: Tool[] = [];
 
   searchText = '';
   selectedCategory = '';
   categories: string[] = [];
 
-  pageSize = 4;
-  currentPage = 0;
-
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-
-  constructor(private toolRepo: ToolRepository) {}
-
   ngOnInit(): void {
-    this.toolRepo.getAllTools().subscribe((data) => {
-      this.tools = data;
-      this.categories = [...new Set(this.tools.map((t) => t.category))];
-      this.applyFilters();
+    this.repo.getAllTools().subscribe({
+      next: (tools) => {
+        this.tools = tools;
+        this.categories = [...new Set(this.tools.map(t => t.category))];
+        this.applyFilters();
+      },
+      error: (err) => console.error('Error loading tools from Firebase:', err)
     });
   }
 
   applyFilters(): void {
-    const text = this.searchText.toLowerCase();
-    this.filteredTools = this.tools.filter(
-      (tool) =>
-        (tool.name.toLowerCase().includes(text) ||
-          tool.tags.some((tag) => tag.toLowerCase().includes(text))) &&
-        (this.selectedCategory ? tool.category === this.selectedCategory : true)
+    const query = this.searchText.toLowerCase().trim();
+    this.filteredTools = this.tools.filter(tool =>
+      (tool.name.toLowerCase().includes(query) ||
+        tool.tags?.some(tag => tag.toLowerCase().includes(query))) &&
+      (this.selectedCategory ? tool.category === this.selectedCategory : true)
     );
-
-    this.paginator?.firstPage();
-    this.updatePagedTools();
   }
 
-  onPageChange(event: PageEvent): void {
-    this.pageSize = event.pageSize;
-    this.currentPage = event.pageIndex;
-    this.updatePagedTools();
-  }
-
-  updatePagedTools(): void {
-    const start = this.currentPage * this.pageSize;
-    const end = start + this.pageSize;
-    this.pagedTools = this.filteredTools.slice(start, end);
-  }
 }

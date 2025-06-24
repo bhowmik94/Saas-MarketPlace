@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Firestore, collectionData, collection } from '@angular/fire/firestore';
 import { Tool } from '../models/tool.model';
 import { Observable } from 'rxjs';
 
@@ -9,9 +9,10 @@ import { Observable } from 'rxjs';
 export class ToolService {
   private readonly apiUrl = 'http://localhost:3000/tools';
 
-  constructor(private http: HttpClient) {}
+  constructor(private firestore: Firestore) {}
 
   fetchTools(): Observable<Tool[]> {
-    return this.http.get<Tool[]>(this.apiUrl);
+    const toolsCollection = collection(this.firestore, 'tools');
+    return collectionData(toolsCollection, { idField: 'id' }) as Observable<Tool[]>;
   }
 }
