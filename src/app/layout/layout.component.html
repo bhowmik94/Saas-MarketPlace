@@ -5,7 +5,8 @@
     [opened]="!isMobile"
     class="app-sidenav"
   >
-    <app-side-bar></app-side-bar> <!-- Sidebar content only -->
+    <app-side-bar></app-side-bar>
+    <!-- Sidebar content only -->
   </mat-sidenav>
 
   <mat-sidenav-content>
@@ -13,7 +14,13 @@
       <button *ngIf="isMobile" mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span class="toolbar-title">🛠️ SaaS Market</span>
+      <a
+        class="toolbar-title"
+        routerLink="/dashboard"
+        style="text-decoration: none; color: inherit"
+      >
+        🛠️ SaaS Market
+      </a>
     </mat-toolbar>
 
     <div class="main-content">

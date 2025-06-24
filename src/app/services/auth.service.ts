@@ -20,12 +20,13 @@ export class AuthService {
     // Sync with Firebase Auth state
     onAuthStateChanged(this.auth, (user) => {
       this.userSignal.set(user);
+      console.log('[Auth State Changed]', user?.email || 'Logged out');
     });
 
     // Optional: reactively log auth changes
     effect(() => {
       const user = this.user();
-      console.log('[Auth Change]', user?.email || 'Logged out');
+      // console.log('[Auth Change]', user?.email || 'Logged out');
     });
   }
 
@@ -50,7 +51,10 @@ export class AuthService {
 
   logout() {
     signOut(this.auth)
-      .then(() => this.router.navigate(['/login']))
+      .then(() => {
+        this.userSignal.set(null); // Clear user signal to avoid multiple rerenders
+        this.router.navigate(['/login']);
+      })
       .catch((err) => console.error('Logout error:', err));
   }
 }

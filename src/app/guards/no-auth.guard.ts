@@ -12,11 +12,9 @@ export class NoAuthGuard implements CanActivate {
     return new Promise((resolve) => {
       onAuthStateChanged(this.auth, (user) => {
         if (user) {
-          // If already logged in → redirect
           this.router.navigate(['/dashboard']);
           resolve(false);
         } else {
-          // Allow access to login/signup
           resolve(true);
         }
       });

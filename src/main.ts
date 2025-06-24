@@ -9,14 +9,12 @@ const firebaseApp = initializeApp(environment.firebase);
 const auth = getAuth(firebaseApp);
 
 // Wait for Firebase to initialize
-getAuth().onAuthStateChanged(() => {
-  // Now bootstrapping the app
-  bootstrapApplication(AppComponent, {
-    providers: [
-      ...appConfig.providers,
-      provideFirebaseApp(() => firebaseApp),
-      provideAuth(() => auth),
-      // other providers
-    ],
-  });
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    ...appConfig.providers,
+    provideFirebaseApp(() => firebaseApp),
+    provideAuth(() => auth),
+    // ...
+  ],
 });
